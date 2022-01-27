@@ -65,7 +65,7 @@ export default function PaginaInicial() {
 
     function getUrl() {
         if (!found) {
-            return 'https://hugocalixto.com.br/wp-content/uploads/sites/22/2020/07/error-404-1.png'
+            return 'https://media4.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif?cid=ecf05e47dk4v11pajk003o5prn635dtk475jh0hfccecgczg&rid=giphy.gif&ct=g'
         }
         if (username.length > 2) {
             return `https://github.com/${username}.png`
@@ -140,7 +140,6 @@ export default function PaginaInicial() {
                             // trocar o valor da variavel
                             // através do react e avise quem precisa
                             setUsername(valor);
-
                         }}
                     />*/}
 
@@ -196,7 +195,7 @@ export default function PaginaInicial() {
                         {username.length <= 2 && dirty &&
                             <Text
                                 styleSheet={{
-                                    marginBottom: '10px', color: appConfig.theme.colors.primary[700],
+                                    marginBottom: '10px', color: appConfig.theme.colors.primary["050"],
                                     fontFamily: 'Play',
                                 }}
                             >
@@ -206,7 +205,7 @@ export default function PaginaInicial() {
                         {!found &&
                             <Text
                                 styleSheet={{
-                                    marginBottom: '10px', color: appConfig.theme.colors.primary[700],
+                                    marginBottom: '10px', color: appConfig.theme.colors.primary["050"],
                                     fontFamily: 'Play'
                                 }}>
                                 Usuário inválido
@@ -268,7 +267,7 @@ export default function PaginaInicial() {
                                 borderRadius: '1000px'
                             }}
                         >
-                            <p>{username || 'sem usuario'}</p>
+                            <p>{username || 'Usuario'}</p>
                         </Text>
 
                         <Text
