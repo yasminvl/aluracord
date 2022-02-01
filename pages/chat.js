@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import Popover from "@material-ui/core/Popover";
 import { useRouter } from 'next/router';
 
 import appConfig from '../config.json';
@@ -300,11 +299,7 @@ function Header() {
 
 
 function MessageList(props) {
-    // constante do popover
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const handlePopoverClose = () => {
-        setAnchorEl(null);
-    };
+
 
     //console.log(props);
     function handleDeleteMensagem(id) {
@@ -335,20 +330,7 @@ function MessageList(props) {
             }}
         >
             {props.mensagens.map((mensagem) => {
-                const handlePopoverOpen = (event) => {
-                    return (
-                        <Text
-                            tag="strong"
-                            styleSheet={{
-                                fontWeight: "bold",
-                                color: appConfig.theme.colors.primary[200],
-                            }}
-                        >
-                            {mensagem.de}
-                        </Text>
-                    )
 
-                };
                 return (
 
                     <Text
@@ -383,8 +365,6 @@ function MessageList(props) {
                                     marginRight: "8px",
                                 }}
                                 src={`https://github.com/${mensagem.de}.png`}
-                                onMouseEnter={handlePopoverOpen}
-                                onMouseLeave={handlePopoverClose}
                             />
                             <Box
                                 styleSheet={{
