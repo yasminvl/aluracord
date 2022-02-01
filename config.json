@@ -1,12 +1,17 @@
 {
     "name": "Aluracord 🦋 (yasxx)",
     "stickers": [
+        "https://media0.giphy.com/media/3o6ZsUMoSiuTgM6QM0/giphy.gif?cid=ecf05e47jyyow5mf8vge3on6cp733elo7miilyt3dvb15vt6&rid=giphy.gif&ct=g",
+        "https://media0.giphy.com/media/L6fzaiLN5zymY5pdmO/giphy.gif",
+        "https://media4.giphy.com/media/Mdiu14O1iElIuxIpbG/giphy.gif?cid=ecf05e478mvf6x37e81nxq0g2rrumpqsneltgsapem6lbd29&rid=giphy.gif&ct=s",
+        "https://media0.giphy.com/media/8TOTDR4Kiq6J6Fnm09/giphy.gif?cid=ecf05e47wdesa619fh8tvp8n63fnr059p5e2b7q6vscevy2m&rid=giphy.gif&ct=g",
         "http://2.bp.blogspot.com/-d21tffsTIQo/U_H9QjC69gI/AAAAAAAAKqM/wnvOyUr6a_I/s1600/Pikachu%2B2.gif",
         "https://media1.giphy.com/media/BdghqxNFV4efm/200.gif",
         "https://c.tenor.com/TKpmh4WFEsAAAAAC/alura-gaveta-filmes.gif",
         "https://i.pinimg.com/originals/0b/1c/23/0b1c2307c83e1ebdeed72e41b9a058ad.gif",
         "https://c.tenor.com/VylWt5lyjBoAAAAC/omg-yes.gif",
-        "https://i.pinimg.com/originals/96/34/c5/9634c520c9a3cd4e7f23190bb2c96500.gif"
+        "https://i.pinimg.com/originals/96/34/c5/9634c520c9a3cd4e7f23190bb2c96500.gif",
+        "https://media3.giphy.com/media/3oriOiizS4Pmofj46A/giphy.gif?cid=ecf05e47t563x0qyq1zfyokqcre49h2q1o6xb6oezc88b4nz&rid=giphy.gif&ct=g"
     ],
     "theme": {
         "colors": {
@@ -18,7 +23,7 @@
                 "400": "#57AE5B",
                 "500": "#A375BD",
                 "600": "#905AAF",
-                "700": "#207227",
+                "700": "#70e000",
                 "800": "#0E5814",
                 "900": "#2D1A38"
             },
