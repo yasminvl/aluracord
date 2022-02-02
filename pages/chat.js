@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/router';
+import { createClient } from '@supabase/supabase-js';
 
 import appConfig from '../config.json';
+import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
+import GitUser from './GitUser'
 
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
-import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
+import Popover from "@material-ui/core/Popover";
+import { makeStyles } from "@material-ui/core/styles";
 import { MdLogin, MdDelete } from "react-icons/md";
 
 
@@ -13,6 +16,15 @@ import { MdLogin, MdDelete } from "react-icons/md";
 const SUPBASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzM3ODUzNiwiZXhwIjoxOTU4OTU0NTM2fQ.zoMXw6NTT2jlzj19HtmtpepOYoayngzmtdOV8pM4u-o';
 const SUPBASE_URL = 'https://oawybanhocjwfxxtmjvl.supabase.co';
 const supabaseClient = createClient(SUPBASE_URL, SUPBASE_ANON_KEY);
+
+const useStyles = makeStyles(theme => ({
+    popover: {
+        pointerEvents: "none"
+    },
+    paper: {
+        padding: theme.spacing(3)
+    }
+}));
 
 //  SE FOSSE SEM A LIB SERIA ASSIM -----------------
 
@@ -300,6 +312,14 @@ function Header() {
 
 function MessageList(props) {
 
+    // Constantes do Popover
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [perfil, setPerfil] = React.useState('')
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+    const classes = useStyles()
 
     //console.log(props);
     function handleDeleteMensagem(id) {
@@ -330,6 +350,15 @@ function MessageList(props) {
             }}
         >
             {props.mensagens.map((mensagem) => {
+
+                const handlePopoverOpen = (event) => {
+                    if (mensagem.de === event.currentTarget.src.slice(19, -4)) {
+                        setAnchorEl(event.currentTarget);
+                        setPerfil(event.currentTarget.src.slice(19, -4))
+                        console.log(mensagem.de, '1', event.currentTarget.src.slice(19, -4))
+                    }
+                };
+                const open = Boolean(anchorEl);
 
                 return (
 
@@ -365,6 +394,8 @@ function MessageList(props) {
                                     marginRight: "8px",
                                 }}
                                 src={`https://github.com/${mensagem.de}.png`}
+                                onMouseEnter={handlePopoverOpen}
+                                onMouseLeave={handlePopoverClose}
                             />
                             <Box
                                 styleSheet={{
@@ -428,6 +459,32 @@ function MessageList(props) {
                                     mensagem.texto*/}
 
                                     {/*{mensagem.texto}*/}
+
+                                    <Popover
+                                        id="mouse-over-popover"
+                                        className={classes.popover}
+                                        classes={{
+                                            paper: classes.paper
+                                        }}
+                                        open={open}
+                                        anchorEl={anchorEl}
+                                        anchorOrigin={{
+                                            vertical: "bottom",
+                                            horizontal: "left"
+                                        }}
+                                        transformOrigin={{
+                                            vertical: "top",
+                                            horizontal: "left"
+                                        }}
+                                        onClose={handlePopoverClose}
+                                        disableRestoreFocus
+                                        styleSheet={{
+                                            backgroundColor: appConfig.theme.colors.neutrals[800],
+                                        }}
+
+                                    >
+                                        <GitUser username={perfil} Close={handlePopoverClose} />
+                                    </Popover>
                                 </Text>
                             </Box>
                         </Box>
