@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
-import { ButtonSendSticker } from './src/components/ButtonSendSticker';
+import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
 import { MdLogin, MdDelete } from "react-icons/md";
 
 
