@@ -45,7 +45,7 @@ export default function GitUserPage(data) {
                             fontSize: "16px",
                         }}
                     >
-                        {userData.login}
+                        {userData.name}
                     </Text>
 
                 </Box>
